@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Brand" representedClassName="Brand" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toProduct" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="toBrand" inverseEntity="Product"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="class">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="productCode" optional="YES" attributeType="String"/>
+        <attribute name="productName" optional="YES" attributeType="String"/>
+        <attribute name="qty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="supplier" optional="YES" attributeType="String"/>
+        <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toProduct" inverseEntity="Brand"/>
+        <relationship name="toSupplier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Supplier" inverseName="toProduct" inverseEntity="Supplier"/>
+    </entity>
+    <entity name="Supplier" representedClassName="Supplier" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toProduct" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="toSupplier" inverseEntity="Product"/>
+    </entity>
+    <elements>
+        <element name="Product" positionX="-224.723388671875" positionY="-135.5328063964844" width="128" height="163"/>
+        <element name="Brand" positionX="-7.6466064453125" positionY="-357.9570465087891" width="128" height="73"/>
+        <element name="Supplier" positionX="-441.7982177734375" positionY="-327.3426818847656" width="128" height="73"/>
+    </elements>
+</model>
