@@ -11,14 +11,32 @@ struct ProductView: View {
     
     @ObservedObject var addDataVM: AddDataViewModel
     
+    @State private var currentDate = Date()
+    
     var body: some View {
-        Text("Product")
-            .navigationBarTitle(Text("Product"))
-            .navigationBarItems(trailing: Button(action: {
-                addDataVM.isAddData = true
-            }, label: {
-                Image(systemName: "plus.circle")
-            }))
+        
+        VStack {
+            DatePicker(selection: $currentDate, displayedComponents: .date) {
+                Text("Select a date ")
+            }
+            .datePickerStyle(GraphicalDatePickerStyle())
+            .labelsHidden()
+            
+            Divider()
+            
+            List{
+                ForEach(0..<15) { item in
+                    Text("item: \(item)")
+                }
+            }
+        }
+        
+        .navigationBarTitle(Text("Product"))
+        .navigationBarItems(trailing: Button(action: {
+            addDataVM.isAddData = true
+        }, label: {
+            Image(systemName: "plus.circle")
+        }))
     }
 }
 

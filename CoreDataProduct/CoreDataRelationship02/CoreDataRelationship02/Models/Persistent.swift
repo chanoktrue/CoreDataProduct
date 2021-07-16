@@ -27,11 +27,22 @@ class PersistentController {
         viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
-    func save() {
+    func save(message: String) {
         do{
             try viewContext.save()
+            print(message)
         }catch{
             print("Save error: \(error.localizedDescription)")
+        }
+    }
+    
+    func save2(complete: @escaping (Bool) -> ()) {
+        do{
+            try viewContext.save()
+            complete(true)
+        }catch{
+            viewContext.rollback()
+            complete(false)
         }
     }
     

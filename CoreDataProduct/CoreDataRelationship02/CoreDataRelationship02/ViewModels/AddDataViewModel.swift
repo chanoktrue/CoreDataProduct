@@ -34,7 +34,7 @@ class AddDataViewModel: ObservableObject {
         withAnimation {
             let brand = Brand(context: viewContext)
             brand.name = name
-            PersistentController.shared.save()
+            PersistentController.shared.save(message: "Save brand complete.")
             name = ""
             isAddData = false
         }
@@ -43,7 +43,7 @@ class AddDataViewModel: ObservableObject {
     func deleteBrand(indexSet: IndexSet, brands: FetchedResults<Brand>) {
         withAnimation {
             indexSet.map({brands[$0]}).forEach(viewContext.delete)
-            PersistentController.shared.save()
+            PersistentController.shared.save(message: "Delete brand complete.")
         }
     }
     
@@ -51,7 +51,7 @@ class AddDataViewModel: ObservableObject {
         withAnimation {
             let supplier = Supplier(context: viewContext)
             supplier.name = name
-            PersistentController.shared.save()
+            PersistentController.shared.save(message: "Add supplier complete.")
             name = ""
             isAddData = false
         }
@@ -60,7 +60,7 @@ class AddDataViewModel: ObservableObject {
     func deleteSupplier(indexSet: IndexSet, suppliers: FetchedResults<Supplier>) {
         withAnimation {
             indexSet.map({suppliers[$0]}).forEach(viewContext.delete)
-            PersistentController.shared.save()
+            PersistentController.shared.save(message: "Delete suppler completer.")
         }
     }
     

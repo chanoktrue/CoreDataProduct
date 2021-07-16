@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD85FF8D26A1323600C6B1A5 /* BrandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD85FF8C26A1323600C6B1A5 /* BrandDetailView.swift */; };
+		CD85FF8F26A1469C00C6B1A5 /* BrandDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD85FF8E26A1469C00C6B1A5 /* BrandDetailViewModel.swift */; };
 		CDE97409269FEB8A00F5E787 /* CoreDataRelationship02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE97408269FEB8A00F5E787 /* CoreDataRelationship02App.swift */; };
 		CDE9740B269FEB8A00F5E787 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9740A269FEB8A00F5E787 /* ContentView.swift */; };
 		CDE9740D269FEB8F00F5E787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE9740C269FEB8F00F5E787 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD85FF8C26A1323600C6B1A5 /* BrandDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandDetailView.swift; sourceTree = "<group>"; };
+		CD85FF8E26A1469C00C6B1A5 /* BrandDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandDetailViewModel.swift; sourceTree = "<group>"; };
 		CDE97405269FEB8A00F5E787 /* CoreDataRelationship02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataRelationship02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE97408269FEB8A00F5E787 /* CoreDataRelationship02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRelationship02App.swift; sourceTree = "<group>"; };
 		CDE9740A269FEB8A00F5E787 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CDE9742926A0020400F5E787 /* AddDataViewModel.swift */,
+				CD85FF8E26A1469C00C6B1A5 /* BrandDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				CDE97421269FF10600F5E787 /* MasterView.swift */,
 				CDE97423269FF26400F5E787 /* ProductView.swift */,
 				CDE97425269FF4B000F5E787 /* BrandView.swift */,
+				CD85FF8C26A1323600C6B1A5 /* BrandDetailView.swift */,
 				CDE97427269FF4C800F5E787 /* SupplierView.swift */,
 				CDE9742B26A0299800F5E787 /* AddDataView.swift */,
 			);
@@ -208,9 +214,11 @@
 				CDE97428269FF4C800F5E787 /* SupplierView.swift in Sources */,
 				CDE97422269FF10600F5E787 /* MasterView.swift in Sources */,
 				CDE9741E269FEFB100F5E787 /* Persistent.swift in Sources */,
+				CD85FF8D26A1323600C6B1A5 /* BrandDetailView.swift in Sources */,
 				CDE9740B269FEB8A00F5E787 /* ContentView.swift in Sources */,
 				CDE9742A26A0020400F5E787 /* AddDataViewModel.swift in Sources */,
 				CDE97426269FF4B000F5E787 /* BrandView.swift in Sources */,
+				CD85FF8F26A1469C00C6B1A5 /* BrandDetailViewModel.swift in Sources */,
 				CDE97424269FF26400F5E787 /* ProductView.swift in Sources */,
 				CDE9741C269FEBC900F5E787 /* Database.xcdatamodeld in Sources */,
 				CDE97409269FEB8A00F5E787 /* CoreDataRelationship02App.swift in Sources */,

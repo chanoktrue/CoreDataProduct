@@ -32,7 +32,9 @@ struct AddDataView: View {
                         Spacer()
                         
                         Button("Cancel") {
-                            addDataVM.isAddData = false
+                            withAnimation {
+                                addDataVM.isAddData.toggle()
+                            }
                         }
                         .overlay(
                             RoundedRectangle(cornerRadius: 25.0)
@@ -43,7 +45,7 @@ struct AddDataView: View {
                         Spacer()
                         
                         Button("Done") {
-                            if addDataVM.selectedTabView == 0 {
+                            if addDataVM.selectedTabView == 1 {
                                 addDataVM.addBrand()
                             }else {
                                 addDataVM.addSubplier()
@@ -64,7 +66,7 @@ struct AddDataView: View {
             )
             .background(Color.white)
             .cornerRadius(25.0)
-            
+            .transition(AnyTransition.move(edge: .top))
     }
 }
 

@@ -9,11 +9,10 @@ import SwiftUI
 
 struct MenuView: View {
     
-    let menus = ["Master", "Product"]
+    let menus = ["☀️Master", "🍎Product", "⚙️Setting"]
     
     @ObservedObject var addDataVM: AddDataViewModel
-//    @EnvironmentObject(\.managerObjectContext) var viewContext
-    
+
     var body: some View {
         List {
             ForEach(menus.indices, id:\.self) { index in
@@ -24,9 +23,15 @@ struct MenuView: View {
                      label: {
                          Text("\(menus[index])")
                      })
-                }else {
+                }else if index == 1 {
                     NavigationLink(
                         destination: ProductView(addDataVM: addDataVM) ,
+                     label: {
+                         Text("\(menus[index])")
+                     })
+                }else {
+                    NavigationLink(
+                        destination: Text("\(menus[index])") ,
                      label: {
                          Text("\(menus[index])")
                      })

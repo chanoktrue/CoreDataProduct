@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct BrandView: View {
-
+    
     @ObservedObject var addDataVM: AddDataViewModel
     
-    @FetchRequest(entity: Brand.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Brand.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Brand.name, ascending: false)])
     var brands: FetchedResults<Brand>
     
     var body: some View {
@@ -19,6 +19,15 @@ struct BrandView: View {
         List {
             ForEach(brands) { brand in
                 Text(brand.name ?? "")
+                    .overlay(
+                        NavigationLink(
+                            destination: BrandDetailView(brand: brand),
+                            label: {
+                                EmptyView()
+                            })
+                            .opacity(0)
+                    )
+                
             }
             .onDelete(perform: { indexSet in
                 addDataVM.deleteBrand(indexSet: indexSet, brands: brands)
@@ -26,10 +35,13 @@ struct BrandView: View {
         }
         
         .navigationBarItems(trailing: Button(action: {
-            
+            //
         }, label: {
             Image(systemName: "plus.circle")
         }))
+        
+        
+        
     }
 }
 

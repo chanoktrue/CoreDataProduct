@@ -15,6 +15,7 @@ struct CoreDataRelationship02App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            BrandDetailView()
                 .environment(\.managedObjectContext, persistentController.viewContext)
         }
     }

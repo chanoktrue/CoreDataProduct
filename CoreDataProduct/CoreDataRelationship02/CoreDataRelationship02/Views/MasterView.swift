@@ -29,11 +29,14 @@ struct MasterView: View {
             }
         
         .navigationBarTitle(Text(addDataVM.menuName()))
+        
         .navigationBarItems(trailing: Button(action: {
             addDataVM.isAddData = true
         }, label: {
             Image(systemName: "plus.circle")
+                .font(.system(size: 20))
         }))
+        
     }
     
 }

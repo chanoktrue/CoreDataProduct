@@ -25,9 +25,14 @@ struct ContentView: View {
             Color.black
                 .opacity(addDataVM.isAddData ? 0.5 : 0)
                 .ignoresSafeArea(.all)
+                
             
             if addDataVM.isAddData {
-                AddDataView(addDataVM: addDataVM)
+                withAnimation {
+                    AddDataView(addDataVM: addDataVM)
+                        .transition(AnyTransition.move(edge: .top))
+                        .animation(.spring())
+                }
             }
         }
         
